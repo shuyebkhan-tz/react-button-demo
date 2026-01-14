@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import CustomButton from './CustomButton';
 
-export default function ParentButton() {
+export default function ParentButton({onClick}) {
   const [loadingBtn, setLoadingBtn] = useState(null);
 
   const handleClick = (btn) => {
@@ -63,6 +63,13 @@ export default function ParentButton() {
 
       <CustomButton disabled>
         Disabled
+      </CustomButton>
+       <CustomButton
+        variant="save"
+        loading={loadingBtn === 'save'}
+        onClick={onClick}
+      >
+        Move to Card
       </CustomButton>
     </div>
   );
